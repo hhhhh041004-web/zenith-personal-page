@@ -249,12 +249,20 @@ h1 .char {
   min-height: 36px;
   align-items: baseline;
   border-bottom: 1px solid rgba(21, 19, 15, 0.13);
-  transition: background 180ms ease, transform 180ms ease;
+  transition: background 180ms ease, transform 180ms ease, opacity 180ms ease;
 }
 
 .profile-grid div:hover {
   background: rgba(255, 250, 240, 0.52);
   transform: translateX(6px);
+}
+
+.profile-grid dl:hover div {
+  opacity: 0.42;
+}
+
+.profile-grid dl:hover div:hover {
+  opacity: 1;
 }
 
 .profile-grid dt {
@@ -288,12 +296,20 @@ h1 .char {
   margin: 0;
   padding-left: 16px;
   border-left: 2px solid var(--orange);
-  transition: transform 180ms ease, border-color 180ms ease;
+  transition: transform 180ms ease, border-color 180ms ease, opacity 180ms ease;
 }
 
 .hero-highlights p:hover {
   border-color: var(--ink);
   transform: translateY(-4px);
+}
+
+.hero-highlights:hover p {
+  opacity: 0.42;
+}
+
+.hero-highlights:hover p:hover {
+  opacity: 1;
 }
 
 .hero-highlights strong,
@@ -474,12 +490,20 @@ h1 .char {
   min-height: 104px;
   border-right: 1px solid var(--line);
   font-family: var(--font-serif);
-  transition: background 180ms ease, transform 180ms ease;
+  transition: background 180ms ease, transform 180ms ease, opacity 180ms ease;
 }
 
 .ticker div:hover {
   background: rgba(255, 250, 240, 0.62);
   transform: translateY(-3px);
+}
+
+.ticker:hover div {
+  opacity: 0.36;
+}
+
+.ticker:hover div:hover {
+  opacity: 1;
 }
 
 .ticker div:last-child {
@@ -587,7 +611,7 @@ h1 .char {
 
 .strength-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
   margin-top: 22px;
   border: 1px solid var(--line);
@@ -598,7 +622,7 @@ h1 .char {
   min-height: 190px;
   padding: 24px;
   background: rgba(244, 239, 228, 0.9);
-  transition: background 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+  transition: background 220ms ease, transform 220ms ease, box-shadow 220ms ease, opacity 180ms ease, filter 180ms ease;
   transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(var(--lift, 0));
   will-change: transform;
 }
@@ -609,13 +633,24 @@ h1 .char {
   --lift: -8px;
 }
 
+.strength-list:hover article {
+  opacity: 0.36;
+  filter: saturate(0.72);
+}
+
+.strength-list:hover article:hover {
+  opacity: 1;
+  filter: none;
+}
+
 .strength-list strong {
   display: block;
   padding-left: 14px;
   border-left: 2px solid var(--orange);
   font-family: var(--font-serif);
-  font-size: 20px;
+  font-size: clamp(17px, 1.18vw, 20px);
   line-height: 1.35;
+  white-space: nowrap;
 }
 
 .strength-list p {
@@ -691,9 +726,9 @@ h1 .char {
   gap: 28px;
   padding: 26px 0;
   border-bottom: 1px solid var(--line);
-  transition: background 220ms ease, padding-left 220ms ease;
+  transition: background 220ms ease, padding-left 220ms ease, opacity 180ms ease;
   position: relative;
-  opacity: 0.72;
+  opacity: 1;
 }
 
 .experience-list li::before {
@@ -709,16 +744,22 @@ h1 .char {
   transition: transform 260ms ease;
 }
 
-.experience-list li:hover,
-.experience-list li.is-current {
+.experience-list li:hover {
   padding-left: 18px;
   background: rgba(255, 250, 240, 0.34);
   opacity: 1;
 }
 
-.experience-list li:hover::before,
-.experience-list li.is-current::before {
+.experience-list li:hover::before {
   transform: scaleY(1);
+}
+
+.experience-list:hover li {
+  opacity: 0.32;
+}
+
+.experience-list:hover li:hover {
+  opacity: 1;
 }
 
 .item-index {

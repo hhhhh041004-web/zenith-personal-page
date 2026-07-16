@@ -188,6 +188,7 @@ const initGsapMotion = () => {
 
   const { gsap } = window;
   gsap.registerPlugin?.(window.ScrollTrigger);
+  window.setTimeout(revealWithoutGsap, 1600);
 
   gsap
     .timeline({ defaults: { ease: "power3.out", duration: 0.9 } })
